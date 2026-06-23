@@ -1,0 +1,29 @@
+# =============================================================================
+# File:    wrangler.toml
+# Purpose: Cloudflare Workers deployment configuration.
+#          Tells Wrangler the project name, entry point, and runtime settings.
+#          Secrets (ANTHROPIC_API_KEY) are set via the Cloudflare dashboard
+#          or `wrangler secret put` — never stored in this file.
+# Author:  [Your Name]
+# Date:    [Date]
+# =============================================================================
+
+name            = "ai-support-chatbot"
+main            = "worker.js"
+compatibility_date = "2024-01-01"
+
+# ---------------------------------------------------------------------------
+# Environment variables that are safe to commit (non-secret config only).
+# Set ANTHROPIC_API_KEY separately via:
+#   wrangler secret put ANTHROPIC_API_KEY
+# or via the Cloudflare dashboard → Workers → Settings → Variables
+# ---------------------------------------------------------------------------
+[vars]
+BUSINESS_NAME = "Acme Customer Support"
+
+# ---------------------------------------------------------------------------
+# Production environment overrides.
+# Keeps staging and production config separate if you add staging later.
+# ---------------------------------------------------------------------------
+[env.production]
+name = "ai-support-chatbot-prod"
