@@ -18,7 +18,7 @@ MIN_INPUT_LENGTH = 2     # Filters out empty pings and single-character noise
 # Patterns that signal a prompt injection attempt.
 # These phrases try to override the system prompt or impersonate the system.
 INJECTION_PATTERNS = [
-    r"ignore (all |previous |above )?instructions",
+    r"ignore.{0,30}instructions",
     r"you are now",
     r"disregard (your |all )?",
     r"act as (a |an )?(?!customer)",  # Allows "act as a customer" but blocks role overrides
