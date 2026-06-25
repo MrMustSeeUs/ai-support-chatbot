@@ -1,3 +1,15 @@
+---
+title: AI Support Chatbot
+emoji: 💬
+colorFrom: blue
+colorTo: indigo
+sdk: gradio
+sdk_version: 4.44.1
+app_file: src/app.py
+pinned: false
+python_version: "3.12"
+---
+
 # 24/7 AI Support Chatbot
 
 A customer support chatbot powered by Claude that answers questions around the clock using a business-provided knowledge base. Maintains full conversation history so follow-up questions work naturally. Falls back gracefully when a question is outside the knowledge base.
