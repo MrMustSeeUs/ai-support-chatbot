@@ -21,7 +21,7 @@
 // Configuration — update HF_SPACE_URL when you deploy to Hugging Face Spaces
 // Format: https://[hf-username]-[space-name].hf.space
 // ---------------------------------------------------------------------------
-const HF_SPACE_URL = "https://abrahammacias-ai-support-chatbot.hf.space";
+const HF_SPACE_URL = "https://mrmustseeus-ai-support-chatbot.hf.space";
 
 export default {
   /**
