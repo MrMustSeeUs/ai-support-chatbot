@@ -1,0 +1,13 @@
+.env
+.env.local
+.env.production
+__pycache__/
+*.py[cod]
+*.pyc
+venv/
+.venv/
+deploy.yml
+gradio_cached_examples/
+flagged/
+.wrangler/
+.DS_Store

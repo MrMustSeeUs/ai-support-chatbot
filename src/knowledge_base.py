@@ -3,8 +3,8 @@
 # Purpose: Loads and caches the business knowledge base from disk.
 #          Called once at startup. The formatted result is injected into
 #          every Claude system prompt so answers stay grounded in real data.
-# Author:  [Your Name]
-# Date:    [Date]
+# Author:  Abraham Macias
+# Date:    2026-06-25
 # =============================================================================
 
 import os
@@ -12,7 +12,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-# Path relative to the project root — works whether you run from root or src/
+# Path relative to the project root
 _KB_PATH = os.path.join(os.path.dirname(__file__), "..", "knowledge_base.txt")
 
 # Module-level cache — file is read once, reused on every request
@@ -24,8 +24,8 @@ def load_knowledge_base() -> str:
     Reads knowledge_base.txt from disk and returns its contents as a string.
 
     Uses a module-level cache so the file is only read once per process.
-    Raises RuntimeError if the file is missing or unreadable — this is
-    intentional: a chatbot with no knowledge base should not start silently.
+    Raises RuntimeError if the file is missing or unreadable — a chatbot
+    with no knowledge base should not start silently.
     """
     global _cached_knowledge_base
 
@@ -69,7 +69,8 @@ def format_for_system_prompt(knowledge_base: str, business_name: str) -> str:
         "IMPORTANT RULES YOU MUST FOLLOW:\n"
         "1. Only answer questions using the information in the KNOWLEDGE BASE below.\n"
         "2. If the answer is not in the knowledge base, say exactly: "
-        "'I don't have that information. Please contact our support team directly.'\n"
+        "'I don't have that information. Please contact our team directly at "
+        "hello@teocallidevs.tech.'\n"
         "3. Never make up information, prices, policies, or contact details.\n"
         "4. Be friendly, concise, and professional.\n"
         "5. If asked who you are, say you are a virtual assistant for "

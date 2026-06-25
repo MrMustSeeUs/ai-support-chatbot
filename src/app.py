@@ -3,7 +3,7 @@
 # Purpose: Application entry point. Builds the Gradio chat interface and
 #          wires it to the ChatbotEngine. Run this file to start the app.
 # Author:  Abraham Macias
-# Date:    2026-06-23
+# Date:    2026-06-25
 # Dependencies: gradio, src.chatbot
 # Usage:   py -3.12 -m src.app
 # =============================================================================
@@ -50,14 +50,13 @@ def create_ui() -> gr.Blocks:
     """
     Constructs the Gradio chat interface.
 
-    Uses gr.ChatInterface with default components — avoids DuplicateBlockError
-    in Gradio 4.19.x which does not accept pre-instantiated child components.
+    Uses gr.ChatInterface with default components to avoid DuplicateBlockError
+    in Gradio 4.x when pre-instantiated child components are passed in.
     """
     business_name = os.environ.get("BUSINESS_NAME", "Teocalli Devs")
 
     engine = create_engine()
     respond = build_respond_fn(engine)
-    clear = build_clear_fn(engine)
 
     with gr.Blocks(
         title=f"{business_name} — AI Support",
@@ -86,7 +85,7 @@ def create_ui() -> gr.Blocks:
 
         gr.Markdown(
             "<small>Powered by Claude AI · Responses are based on our knowledge base · "
-            "For urgent issues contact us at teocallidevs.com.</small>"
+            "Questions? Email us at hello@teocallidevs.tech</small>"
         )
 
     return demo
@@ -105,8 +104,7 @@ def main():
     demo.launch(
         server_name="0.0.0.0",
         server_port=port,
-        share=True,        # Temporary — generates a public gradio.live URL
-        show_error=True,
+        show_error=False,  # Never expose stack traces to end users
     )
 
 

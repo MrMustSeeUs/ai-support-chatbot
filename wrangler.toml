@@ -4,26 +4,21 @@
 #          Tells Wrangler the project name, entry point, and runtime settings.
 #          Secrets (ANTHROPIC_API_KEY) are set via the Cloudflare dashboard
 #          or `wrangler secret put` — never stored in this file.
-# Author:  [Your Name]
-# Date:    [Date]
+# Author:  Abraham Macias
+# Date:    2026-06-25
 # =============================================================================
 
-name            = "ai-support-chatbot"
-main            = "worker.js"
+name               = "ai-support-chatbot"
+main               = "worker.js"
 compatibility_date = "2024-01-01"
 
 # ---------------------------------------------------------------------------
-# Environment variables that are safe to commit (non-secret config only).
-# Set ANTHROPIC_API_KEY separately via:
+# Non-secret environment variables. Set ANTHROPIC_API_KEY separately via:
 #   wrangler secret put ANTHROPIC_API_KEY
-# or via the Cloudflare dashboard → Workers → Settings → Variables
+# or Cloudflare dashboard → Workers → Settings → Variables & Secrets
 # ---------------------------------------------------------------------------
 [vars]
-BUSINESS_NAME = "Acme Customer Support"
+BUSINESS_NAME = "Teocalli Devs"
 
-# ---------------------------------------------------------------------------
-# Production environment overrides.
-# Keeps staging and production config separate if you add staging later.
-# ---------------------------------------------------------------------------
 [env.production]
 name = "ai-support-chatbot-prod"

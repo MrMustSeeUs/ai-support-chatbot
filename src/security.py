@@ -3,8 +3,8 @@
 # Purpose: Input validation layer. Every user message passes through here
 #          before reaching the Claude API. Catches abuse, injection attempts,
 #          and malformed input early so the rest of the app stays clean.
-# Author:  [Your Name]
-# Date:    [Date]
+# Author:  Abraham Macias
+# Date:    2026-06-25
 # =============================================================================
 
 import re
@@ -21,7 +21,7 @@ INJECTION_PATTERNS = [
     r"ignore.{0,30}instructions",
     r"you are now",
     r"disregard (your |all )?",
-    r"act as (a |an )?(?!customer)",  # Allows "act as a customer" but blocks role overrides
+    r"act as (a |an )?(?!customer)",
     r"system prompt",
     r"forget (everything|your instructions)",
     r"new instructions",
@@ -41,7 +41,6 @@ def validate_message(message: str) -> tuple[bool, str]:
     Returns a tuple of (is_valid: bool, error_message: str).
     On success, error_message is an empty string.
     """
-    # Guard against None or non-string input
     if not message or not isinstance(message, str):
         return False, "Please enter a message."
 
@@ -56,11 +55,10 @@ def validate_message(message: str) -> tuple[bool, str]:
             "Please shorten your question."
         )
 
-    # Check for prompt injection patterns
     for pattern in _COMPILED_PATTERNS:
         if pattern.search(cleaned):
             return False, (
-                "I can only help with questions about our products and services. "
+                "I can only help with questions about our services. "
                 "How can I assist you today?"
             )
 
@@ -73,5 +71,4 @@ def sanitize_message(message: str) -> str:
     Called after validate_message confirms the input is safe.
     Does not remove content — only normalizes formatting.
     """
-    # Collapse multiple spaces/newlines into a single space
     return re.sub(r"\s+", " ", message.strip())

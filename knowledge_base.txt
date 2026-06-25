@@ -46,15 +46,15 @@ PRICING:
 All Teocalli Devs engagements are custom-scoped based on your specific
 needs, timeline, and goals. We do not publish fixed rates because every
 project is different and we want to give you an honest number, not a
-generic one. Reach out through our contact form and we will get back to
-you with a clear proposal — no obligation, no pressure.
+generic one. Reach out by email and we will get back to you with a clear
+proposal — no obligation, no pressure.
 
 ---
 
 PROCESS:
 Here is how working with us typically looks:
 
-1. Discovery — You fill out our contact form and tell us about your project.
+1. Inquiry — You email us and tell us about your project.
 2. Consultation — We schedule a call to understand your goals in depth.
 3. Proposal — We send you a clear scope of work and timeline.
 4. Build — We get to work, keeping you updated at every milestone.
@@ -77,11 +77,9 @@ Databases: PostgreSQL, MongoDB, DynamoDB, Supabase
 ---
 
 CONTACT:
-The best way to reach us is through the contact form at teocallidevs.com.
-All form submissions go directly to our team and are reviewed personally.
+The best way to reach us is by email at hello@teocallidevs.tech.
 We respond to every inquiry within 1 business day.
-
-For general questions you can also email us directly.
+You can also learn more about us at teocallidevs.tech.
 We do not have a support phone line at this time.
 
 ---
@@ -89,14 +87,13 @@ We do not have a support phone line at this time.
 FREQUENTLY ASKED QUESTIONS:
 
 Q: How do I get started?
-A: Fill out the contact form at teocallidevs.com with a description of
-your project. We will reach out within 1 business day to schedule a
-discovery call.
+A: Email us at hello@teocallidevs.tech with a description of your project.
+We will reach out within 1 business day to schedule a discovery call.
 
 Q: How much does a project cost?
 A: Every project is scoped individually. We do not publish fixed rates
 because we want to give you an accurate number based on your actual needs.
-Contact us and we will send you a clear, no-obligation proposal.
+Email us and we will send you a clear, no-obligation proposal.
 
 Q: How long does a project take?
 A: Timelines vary by project size. A focused MVP or AI integration can
@@ -126,7 +123,7 @@ development, which means we are building with the tools that matter most
 right now.
 
 Q: I am not sure what I need — can you still help?
-A: Yes. That is exactly what our consulting engagements are for. Reach out,
+A: Yes. That is exactly what our consulting engagements are for. Email us,
 tell us the problem you are trying to solve, and we will help you figure
 out the right path forward.
 

@@ -1,3 +1,13 @@
+# =============================================================================
+# File:    requirements.txt
+# Purpose: Pinned Python dependencies for the AI Support Chatbot.
+#          All versions are locked to the exact stack confirmed working on
+#          Python 3.12 / Windows and Hugging Face Spaces (Linux).
+#          Do not loosen version pins without testing the full stack.
+# Author:  Abraham Macias
+# Date:    2026-06-25
+# =============================================================================
+
 anthropic==0.109.2
 gradio==4.44.1
 gradio-client==1.3.0
